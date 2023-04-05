@@ -17,7 +17,7 @@ namespace TechJobsOOAutoGraded6
 
         public Location(string v)
         {
-            this.v = v;
+            this.Value = v;
         }
 
         // TODO: Task 2: Add a second constructor to this class that uses the Location() constructor and sets the value of the value field.
