@@ -21,20 +21,21 @@ namespace TechJobsOOAutoGraded6
             Value = v;
         }
 
-        public override bool Equals(object obj)
+        public override string ToString()
+        {
+            return Value;
+        }
+
+        public override bool Equals(object? obj)
         {
             return obj is CoreCompetency competency &&
-                   Id == competency.Id;
+                   Id == competency.Id &&
+                   Value == competency.Value;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Id);
-        }
-
-        public override string ToString()
-        {
-            return Value;
+            return HashCode.Combine(Id, Value);
         }
     }
 }

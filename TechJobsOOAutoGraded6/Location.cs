@@ -15,14 +15,23 @@ namespace TechJobsOOAutoGraded6
             nextId++;
         }
 
-        public Location(string v)
+        public Location(string v) : this ()
         {
-            this.Value = v;
+            Value = v;
+
         }
+
 
         // TODO: Task 2: Add a second constructor to this class that uses the Location() constructor and sets the value of the value field.
 
-        public override bool Equals(object obj)
+        
+
+        public override string ToString()
+        {
+            return Value;
+        }
+
+        public override bool Equals(object? obj)
         {
             return obj is Location location &&
                    Id == location.Id;
@@ -31,11 +40,6 @@ namespace TechJobsOOAutoGraded6
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
-        }
-
-        public override string ToString()
-        {
-            return Value;
         }
     }
 }
