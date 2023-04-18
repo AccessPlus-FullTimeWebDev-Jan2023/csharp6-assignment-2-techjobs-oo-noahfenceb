@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace TechJobs.Tests
 {
 	[TestClass]
@@ -56,6 +58,14 @@ namespace TechJobs.Tests
             string result = job.ToString();
             Assert.IsTrue(result.Contains("ID:") && result.Contains("Name:") && result.Contains("Employer:") && result.Contains("Position Type:") && result.Contains("Core Competency:"));
             Assert.IsTrue(result.Contains("Software Engineer") && result.Contains("Amazon") && result.Contains("Seattle") && result.Contains("Full-time") && result.Contains("Java"));
+        }
+        [TestMethod]
+        public void TestToStringHandlesEmptyField()
+        {
+            Job job = new Job();
+            string result = job.ToString();
+            string expected = $"{Environment.NewLine} ID:{job.Id}{Environment.NewLine} Name: Data not Available {Environment.NewLine} Employer: Data not Available {Environment.NewLine} Position Type: Data not Available {Environment.NewLine} Core Competency: Data not Available";
+             
         }
     }
 }
